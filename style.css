@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    /* border: 1px dashed black;  */
+    box-sizing: border-box;
+    font-family: 'Press Start 2P';
+    padding: 0;
+    margin: 0;
+
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.heartIcon{
+    width: 30px;
+    height: 30px;
+}
+
+.chat{
+    display: none;
+    align-self: center;
+    padding-top: 30px;
+}
+
+.chat-window{
+    width: 400px;
+    height: 400px;
+    margin: 0 20px 0 0;
+    position: relative;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+    display: flex;
+    flex-flow: column;
+    flex-direction: column-reverse;
+    border-radius: 10px 10px 0 0;
+    background: white;
+    bottom: 0;
+    transition: .1s ease-out;
+    overflow: auto;
+}
+
+.landing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: auto;
+    align-self: center;
+    padding: 10px;
+}
+
+.landing-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.gameTable{
+    display: none;
+    flex-direction: column;
+    flex-basis: auto;
+    align-self: center;
+    width: 600px;
+}
+
+.gameTable--Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+canvas{
+    background: #eee;
+}
+
+button{
+    padding: 5px;
+    cursor: pointer; 
+}
+
+button:hover {
+    transform:scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform:scale(1.1,1.1);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    /* font-family: 'Press Start 2P'; */
+    color: red;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 60%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    font-size: 50px
+  }
+  

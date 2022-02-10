@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+    <div id="landing" class="landing">
+        <div><h3>Welcome to Ping Pong Master</h3></div>
+        <div class="landing-buttons">
+            <div><button id="newGameButton">New Game</button></div>
+            <div><button id="viewGameButton">View Game</button></div>
+        </div>
+    </div>
+
+    <div id="gameTable" class="gameTable">
+        <div class="gameTable--Header">
+            <div><img class="heartIcon" src="./resources/pixelheart.png"></img>x<span id="livesPlayer1"></span></div>
+            <div><img class="heartIcon" src="./resources/pixelheart.png"></img>x<span id="livesPlayer2"></span></div>
+        </div>
+        <div>
+            <canvas id="myCanvas" width="600" height="320"></canvas>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</main>
+    <div class = "chat" id="chat">
+        <div class = "chat-window" id = "chat-window">
+           <ul id = "messages">
+              <li class="msg">
+                <span class = "msg-span">
+                  <i class = "name">Host: </i>Hello and welcome to the chat!
+                </span>
+              </li>
+           </ul>
+        </div>
+        <form id = "messageForm" autocomplete="off">
+            <input type = "text" id = "msg-input" placeholder="Enter a message">
+            <button id = "msg-btn" type = "submit">Send</button>
+          </form>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p id="modalText">Some text in the Modal..</p>
+        </div>
+    </div>
+
+    <div id="pauseModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p id="pauseModalText">Some text in the Modal..</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>
