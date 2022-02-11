@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 *{
-    /* border: 1px dashed black;  */
+    border: 1px dashed black; 
     box-sizing: border-box;
     font-family: 'Press Start 2P';
     padding: 0;
     margin: 0;
 
 }
+
+.logo{
+    display: block;
+    text-align: center;
+    padding-top: 0%;
+}
+
+.logo-image{
+    width: 600px;
+}
+
 
 main{
     display: flex;
@@ -22,33 +33,72 @@ main{
 
 .chat{
     display: none;
+    flex-direction: column;
     align-self: center;
-    padding-top: 30px;
+    padding: 30px;
 }
 
 .chat-window{
     width: 400px;
     height: 400px;
-    margin: 0 20px 0 0;
+    padding-bottom: 20px;
     position: relative;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+    border-radius: 10px 10px 0 0;
     display: flex;
     flex-flow: column;
     flex-direction: column-reverse;
-    border-radius: 10px 10px 0 0;
-    background: white;
+    background: rgb(175, 175, 175);
+    background-image: url("/resources/wallpaper_sphere.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     bottom: 0;
     transition: .1s ease-out;
     overflow: auto;
+    padding: 10px;
+}
+.msg{
+    background: rgb(223, 239, 250);
+    border-radius: 10px;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.my-msg{
+    background: rgb(227, 255, 220);
+    border-radius: 10px;
+    padding: 10px;
+    
+    text-align: right;
+    word-wrap: break-word;
+}
+
+.messageForm{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.chat-msg-field{
+    text-align: left;
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+}
+
+.chat-send-button{
+    text-align: center;
+    width: 20%;
 }
 
 .landing{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     flex-basis: auto;
     align-self: center;
-    padding: 10px;
 }
 
 .landing-buttons{
@@ -64,18 +114,30 @@ main{
     flex-basis: auto;
     align-self: center;
     width: 600px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+    border-radius: 10px 10px 0 0;
+
+    
 }
 
 .gameTable--Header{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+    border-radius: 10px 10px 0 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: lightblue;
+    background-color: rgb(83, 83, 83);
+    color: white;
     padding: 10px;
 }
 
 canvas{
     background: #eee;
+    background-image: url("/resources/table.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 button{

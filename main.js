@@ -79,6 +79,7 @@ var pausePressed = false
 let x = canvas.width / 2
 let y = canvas.height - 30
 let ballRadius = 8
+let ballColor = "red"
 
 let dx = 2
 let dy = -2
@@ -88,13 +89,13 @@ let player1_paddleHeight = 60
 let player1_paddleWidth = 10
 let player1_paddleY = (canvas.height - player1_paddleHeight) / 2
 let player1_paddleX = player1_paddleWidth
-let player1_color = "red"
+let player1_color = "black"
 
 let player2_paddleHeight = 60
 let player2_paddleWidth = 10
 let player2_paddleY = (canvas.height - player2_paddleHeight) / 2
 let player2_paddleX = (canvas.width - player2_paddleWidth)
-let player2_color = "green"
+let player2_color = "gray"
 
 /// CHAT
 
@@ -158,9 +159,10 @@ msgForm.addEventListener('submit', sendMessage);
 function sendMessage(e){
     e.preventDefault();
     const timestamp = Date.now();
-    const chatTxt = document.getElementById("msg-input");
+    const chatTxt = document.getElementById("msg-input")
+    if(!chatTxt.value) return
     const message = chatTxt.value;
-    chatTxt.value = "";
+    chatTxt.value = ""
     set(ref(db,"game/chat/" + timestamp),{
         user: name,
         msg: message,
@@ -172,8 +174,15 @@ onValue(fetchChat, (snapshot) => {
     const messages = snapshot.val();
     const length = Object.keys(messages).length-1
     const lastMessage = Object.keys(messages)[length]
-    const msg = "<br><li>" + messages[lastMessage].user + ": " + messages[lastMessage].msg + "</li>";
-    document.getElementById("messages").innerHTML += msg;
+
+    if(name === messages[lastMessage].user){
+        const msg = "<br><li class='my-msg'>" + messages[lastMessage].msg + "</li>";
+        document.getElementById("messages").innerHTML += msg;
+    }else{
+        const msg = "<br><li class='msg'>" + messages[lastMessage].user + ": " + messages[lastMessage].msg + "</li>";
+        document.getElementById("messages").innerHTML += msg;
+    }
+
 });
 
 
@@ -182,7 +191,7 @@ onValue(fetchChat, (snapshot) => {
 function draw() {
     
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    var ball = new DrawBall(ctx, x, y, ballRadius, 'blue', ballImage)
+    var ball = new DrawBall(ctx, x, y, ballRadius, ballColor, ballImage)
     var player1_paddle = new DrawPaddle(ctx, canvas, 0, player1_paddleY, player1_paddleWidth, player1_paddleHeight, player1_color)
     var player2_paddle = new DrawPaddle(ctx, canvas, player2_paddleX, player2_paddleY, player2_paddleWidth, player2_paddleHeight, player2_color)
 
@@ -294,7 +303,7 @@ function drawStream() {
         ballRadius = snapshot.val()
     })
 
-    let ball = new DrawBall(ctx, x, y, ballRadius, 'blue', ballImage)
+    let ball = new DrawBall(ctx, x, y, ballRadius, ballColor, ballImage)
     ball.printBall()
 
 
@@ -345,12 +354,6 @@ function drawStream() {
     
     let player2_paddle = new DrawPaddle(ctx, canvas, player2_paddleX, player2_paddleY, player2_paddleWidth, player2_paddleHeight, player2_color)
     player2_paddle.printPaddle()
-
-    // onValue(player2Ref, (snapshot) => {
-    //     let player2_paddle = new DrawPaddle(ctx, canvas, snapshot.val().paddleX, snapshot.val().paddleY, snapshot.val().paddleWidth, snapshot.val().paddleHeight, player2_color)
-    //     player2_paddle.printPaddle()
-    //     livesPlayer2.innerHTML = snapshot.val().lives
-    // })
 
     requestAnimationFrame(drawStream)
 }

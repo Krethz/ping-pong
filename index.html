@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AirHockey</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="logo">
+        <img class="logo-image" src="./resources/airhockeylogo.png" alt="">
+    </div>
 <main>
+    
+
     <div id="landing" class="landing">
-        <div><h3>Welcome to Ping Pong Master</h3></div>
-        <div class="landing-buttons">
-            <div><button id="newGameButton">New Game</button></div>
-            <div><button id="viewGameButton">View Game</button></div>
-        </div>
+            <div class="landing-buttons"><button id="newGameButton">New Game</button></div>
+            <div class="landing-buttons"><button id="viewGameButton">View Game</button></div>
     </div>
 
     <div id="gameTable" class="gameTable">
@@ -29,22 +31,22 @@
         </div>
     </div>
     <script type="module" src="main.js"></script>
-</main>
+
     <div class = "chat" id="chat">
         <div class = "chat-window" id = "chat-window">
            <ul id = "messages">
               <li class="msg">
-                <span class = "msg-span">
                   <i class = "name">Host: </i>Hello and welcome to the chat!
-                </span>
               </li>
            </ul>
         </div>
-        <form id = "messageForm" autocomplete="off">
-            <input type = "text" id = "msg-input" placeholder="Enter a message">
-            <button id = "msg-btn" type = "submit">Send</button>
-          </form>
+        <form class="messageForm" id = "messageForm" autocomplete="off">
+            <input class="chat-msg-field" type = "text" id = "msg-input" placeholder="Enter a message">
+            <button class="chat-send-button" id = "msg-btn" type = "submit">Send</button>
+        </form>
     </div>
+</main>
+    
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
