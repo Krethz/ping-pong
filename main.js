@@ -176,10 +176,10 @@ onValue(fetchChat, (snapshot) => {
     const lastMessage = Object.keys(messages)[length]
 
     if(name === messages[lastMessage].user){
-        const msg = "<br><li class='my-msg'>" + messages[lastMessage].msg + "</li>";
+        const msg = "<li class='my-msg'>" + messages[lastMessage].msg + "</li>";
         document.getElementById("messages").innerHTML += msg;
     }else{
-        const msg = "<br><li class='msg'>" + messages[lastMessage].user + ": " + messages[lastMessage].msg + "</li>";
+        const msg = "<li class='msg'> <i class = 'msg-name'>" + messages[lastMessage].user + ":</i> " + messages[lastMessage].msg + "</li>";
         document.getElementById("messages").innerHTML += msg;
     }
 

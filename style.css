@@ -39,7 +39,7 @@ main{
 }
 
 .chat-window{
-    width: 400px;
+    width: 600px;
     height: 400px;
     padding-bottom: 20px;
     position: relative;
@@ -53,26 +53,41 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     bottom: 0;
     transition: .1s ease-out;
     overflow: auto;
     padding: 10px;
 }
-.msg{
-    background: rgb(223, 239, 250);
-    border-radius: 10px;
+
+/* .messages{
+    display: inline-block;
+} */
+
+.msg-name{
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+}
+
+.msg, .my-msg{
     padding: 10px;
+    background: rgb(223, 239, 250);
+    color: rgb(75, 75, 75);
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.msg{
+    
     word-wrap: break-word;
+    
+    float: left;
+    
 }
 
 .my-msg{
-    background: rgb(227, 255, 220);
-    border-radius: 10px;
-    padding: 10px;
-    
-    text-align: right;
     word-wrap: break-word;
+    /* transform: translateX(40%); */
+    float: right;
 }
 
 .messageForm{
